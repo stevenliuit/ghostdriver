@@ -531,6 +531,7 @@ ghostdriver.Session = function(desiredCapabilities) {
         if (_currentWindowHandle === null) {
             // Create the first Window/Page
             page = require("webpage").create();
+            page.viewportSize = {width: 1024,height: 768};
             // Decorate it with listeners and helpers
             page = _decorateNewWindow(page);
             // set session-specific CookieJar
